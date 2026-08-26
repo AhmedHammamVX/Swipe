@@ -17,7 +17,7 @@ Watch a walkthrough of Swipe:
   3. Optional: drop a thumbnail at docs/demo-thumbnail.png and uncomment the image link
 -->
 
-[▶ Watch the project video](VIDEO_URL)
+[▶ Watch the project video](https://www.linkedin.com/feed/update/urn:li:activity:7498064726506258432/)
 
 <!--
 [![Watch the demo](docs/demo-thumbnail.png)](VIDEO_URL)

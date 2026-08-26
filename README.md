@@ -6,6 +6,37 @@ A messenger-style web app: sign in, find people, chat live, and see who’s onli
 
 ---
 
+## Demo
+
+Watch a walkthrough of Swipe:
+
+<!--
+  Option A — YouTube / LinkedIn / Drive (recommended)
+  1. Upload the video
+  2. Replace VIDEO_URL below
+  3. Optional: drop a thumbnail at docs/demo-thumbnail.png and uncomment the image link
+-->
+
+[▶ Watch the project video](VIDEO_URL)
+
+<!--
+[![Watch the demo](docs/demo-thumbnail.png)](VIDEO_URL)
+-->
+
+<!--
+  Option B — Host the file in this repo
+  1. Put your video at docs/demo.mp4 (keep it under GitHub’s 100 MB file limit)
+  2. Uncomment the block below
+-->
+
+<!--
+<video src="docs/demo.mp4" width="100%" controls>
+  Your browser does not support the video tag. [Download the demo](docs/demo.mp4)
+</video>
+-->
+
+---
+
 ## Features
 
 - **Auth** — login, signup, session restore, logout (HTTP cookies)

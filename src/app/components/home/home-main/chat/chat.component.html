@@ -1,0 +1,65 @@
+<div class="content">
+    @if(selectedFriend){
+    <!-- chat -->
+    <div class="container">
+        <div class="col-md-12">
+            @for(message of allMessages(); track message._id; let last = $last){
+            <div class="message" [class.me]="currentUser?._id === message.senderId"><!-- class="me" -->
+                <div class="text-main">
+                    <div class="text-group" [class.me]="currentUser?._id === message.senderId"><!-- class="me" -->
+                        <div class="text" [class.me]="currentUser?._id === message.senderId"><!-- class="me" -->
+                            @if(message?.image){
+                            <div class="img">
+                                <img [src]="message?.image" />
+                            </div>
+                            }
+                            <p [class.mt-2]="message?.image">{{message?.text}}</p>
+                        </div>
+                    </div>
+                    <span><i class="material-icons">check</i>{{message.createdAt | date:'short'}}</span>
+                </div>
+                @if (last) {<div #lastMessage></div>}
+            </div>
+            }
+            <!-- @empty{
+            <div class="empty h-100">
+                <div class="no-messages">
+                    <i class="material-icons md-48">forum</i>
+                    <p>Seems people are shy to start the chat. Break the ice send the first message.</p>
+                </div>
+            </div>
+            } -->
+        </div>
+    </div>
+    }@else {
+    <!-- accepting friend reqest  -->
+    <div class="empty h-100">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="no-messages request">
+                    <a><img class="avatar-xl" [src]="selectedFriendRequest?.profilePic ||'assets/images/blank-pic.jpg'"
+                            data-toggle="tooltip" data-placement="top" title="" alt="avatar"></a>
+                    <h5>{{selectedFriendRequest?.fullName}} would like to add you as a contact. <span>Hi, I'd like
+                            to add you as a contact.</span></h5>
+                    <div class="options">
+                        <button class="btn button" (click)="acceptFriendRequest()"><i
+                                class="material-icons">check</i></button>
+                        <button class="btn button" (click)="rejectFriendRequest()"><i
+                                class="material-icons">close</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- no chat yet -->
+<!-- <div class="container" *ngSwitchCase="'noChat'">
+    <div class="col-md-12">
+        <div class="no-messages">
+            <i class="material-icons md-48">forum</i>
+            <p>Seems people are shy to start the chat. Break the ice send the first message.</p>
+        </div>
+    </div>
+</div> -->

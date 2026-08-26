@@ -1,0 +1,61 @@
+<div class="content">
+    <h1>Create Account</h1>
+    <div class="third-party">
+        <button class="btn item bg-blue">
+            <i class="material-icons">pages</i>
+        </button>
+        <button class="btn item bg-teal">
+            <i class="material-icons">party_mode</i>
+        </button>
+        <button class="btn item bg-purple">
+            <i class="material-icons">whatshot</i>
+        </button>
+    </div>
+    <p>or use your email for registration:</p>
+    <form class="signup" [formGroup]="Form" (ngSubmit)="signup()">
+        <div class="form-parent">
+            <div class="form-group">
+                <input type="text" formControlName="fullName" id="inputFullName" class="form-control"
+                    [class.is-invalid]="checkValidity('fullName')" [class.is-valid]="Form.controls['fullName'].valid"
+                    placeholder="Full Name">
+                <span><i class="material-icons">person_outline</i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="userName" id="inputName" class="form-control"
+                    [class.is-invalid]="checkValidity('userName')" [class.is-valid]="Form.controls['userName'].valid"
+                    placeholder="Username">
+                <span><i class="material-icons">person_outline</i></span>
+                <!-- <span class="spinner-border" *ngIf="loading" role="status"></span> -->
+            </div>
+        </div>
+        <div class="form-parent">
+            <div class="form-group">
+                <input type="email" formControlName="email" id="inputEmail" class="form-control"
+                    placeholder="Email Address" [class.is-invalid]="checkValidity('email')"
+                    [class.is-valid]="Form.controls['email'].valid">
+                <span><i class="material-icons">mail_outline</i></span>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="password" id="inputPassword" class="form-control"
+                    placeholder="Password" [class.is-invalid]="checkValidity('password')"
+                    [class.is-valid]="Form.controls['password'].valid">
+                <span><i class="material-icons">lock_outline</i></span>
+            </div>
+        </div>
+        <!-- <div *ngIf="Form.invalid">
+            <p class="invalid_message" *ngIf="Form.controls['fullName'].invalid && (Form.controls['fullName'].touched || Form.controls['fullName'].dirty)">FullName length 6 - 20 letters(including space)</p>
+            <p class="invalid_message" *ngIf="(usernameC.hasError('minlength') || usernameC.hasError('maxlength') || usernameC.hasError('required')) && (usernameC.touched || usernameC.dirty)">Username length 5 - 10 letters</p>
+            <p class="invalid_message" *ngIf="usernameC.hasError('invalidUsername') && (usernameC.touched || usernameC.dirty)">Username already taken!</p>
+            <p class="invalid_message" *ngIf="usernameC.hasError('pattern') && (usernameC.touched || usernameC.dirty)">Invalid username format.</p>
+            <p class="invalid_message" *ngIf="Form.controls['email'].invalid && (Form.controls['email'].touched || Form.controls['email'].dirty)">Invalid email format for the email field</p>
+            <p class="invalid_message" *ngIf="Form.controls['password'].invalid && (Form.controls['password'].touched || Form.controls['password'].dirty)">Password at least 6 letters, including 1 uppercase letter, 1 numeric digit and 1 special character.</p>
+        </div> -->
+        <!-- <div *ngIf="signUpErrorM">
+            <p class="invalid_message">{{signUpErrorM}}</p>
+        </div> -->
+        <button type="submit" class="btn button" [disabled]="Form.invalid">Sign Up</button>
+        <div class="callout">
+            <span>Already a member? <a class="links" (click)="changeMainPosition()">Sign In</a></span>
+        </div>
+    </form>
+</div>

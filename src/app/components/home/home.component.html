@@ -1,0 +1,20 @@
+<main>
+    <div class="layout">
+        <app-home-navigation></app-home-navigation>
+
+        <!-- Start of Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="microphone" (click)="listen()" [class.listening]="isListening" [class.noSpeech]="isNoSpeech"><i class="material-icons mic">mic</i></button> -->
+        </div>
+        <!-- End of Sidebar -->
+
+        <app-home-main class="w-100 home-main" [class.open]="this.selectedFriend"></app-home-main>
+    </div>
+</main>

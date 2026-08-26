@@ -1,0 +1,17 @@
+@media (max-width: 991px)
+{
+    .navigation {
+        border-top: 2px solid #2196f3;
+    }
+}
+
+@media (min-width: 992px)
+{
+    .navigation {
+        border-right: 2px solid #2196f3;
+    }
+}
+
+a{
+    cursor: pointer;
+}

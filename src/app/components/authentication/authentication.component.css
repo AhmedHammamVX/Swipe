@@ -1,0 +1,95 @@
+
+.E-layout {
+    position: relative;
+}
+
+.main {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .main {
+        width: calc(100% - 550px);
+    }
+
+    .main-right {
+        left: 550px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .aside {
+        width: 50%;
+        min-width: auto;
+        max-width: 50%;
+    }
+
+    .main {
+        width: 50%;
+        min-width: auto;
+        max-width: 50%;
+    }
+
+    .main-right {
+        left: 50%;
+    }
+
+}
+
+.content {
+    transition: all 0.7s ease;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    /* height: 0 !important;
+    overflow: hidden; */
+}
+
+.main .start {
+    padding: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hideT {
+    animation-name: hidding;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    display: block;
+    /* visibility: visible;
+    opacity: 1;
+    height: auto !important; */
+}
+
+@media screen and (min-width: 992px) {
+    .hideT {
+        animation-duration: 0s;
+    }
+}
+
+@keyframes hidding {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+.aside_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

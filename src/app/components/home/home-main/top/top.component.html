@@ -1,0 +1,53 @@
+<div class="top">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="inside">
+                <button class="btn connect d-block d-lg-none mr-5" name="1" (click)="closeModal()"><i
+                        class="material-icons md-30">arrow_back</i></button>
+
+                <div class="position-relative">
+                    <a href="#"><img class="avatar-md"
+                            [src]="selectedFriend?.profilePic || selectedFriendRequest?.profilePic ||'assets/images/blank-pic.jpg'"
+                            data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar"></a>
+                    <div class="status">
+                        <i class="material-icons" [class.online]="isOnline()">fiber_manual_record</i>
+                    </div>
+                </div>
+                <div class="data">
+                    <h5><a href="#">{{selectedFriend?.fullName || selectedFriendRequest?.fullName || 'loading...'}}</a>
+                    </h5>
+                    @if(isOnline()){
+                    <span>Active now</span>
+                    }@else {
+                    <span>Not Active</span>
+                    }
+                </div>
+                <!-- <button class="btn connect d-md-block d-none" name="1" [disabled]="selectedFriendRequest"
+                    (click)="startCall('audio')"><i class="material-icons md-30">phone_in_talk</i></button>
+                <button class="btn connect d-md-block d-none" name="1" [disabled]="selectedFriendRequest"
+                    (click)="startCall('video')"><i class="material-icons md-36">videocam</i></button> -->
+                <div class="dropdown">
+                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false"
+                        [disabled]="selectedFriendRequest"><i class="material-icons md-30">more_vert</i></button>
+                    <div class="dropdown-menu">
+                        <!-- <button class="dropdown-item connect" name="1"><i class="material-icons">phone_in_talk</i>Voice
+                            Call</button>
+                        <button class="dropdown-item connect" name="1"><i class="material-icons">videocam</i>Video
+                            Call</button> -->
+                        <button class="dropdown-item" (click)="closeModal()"><i class="material-icons">clear</i>Close
+                            chat</button>
+                        <hr>
+                        <button class="dropdown-item" (click)="clearChat()"><i
+                                class="material-icons">do_not_disturb_on</i>Clear History</button>
+                        <button class="dropdown-item" (click)="blockFriend()"><i class="material-icons">block</i>Block
+                            Contact</button>
+                        <button class="dropdown-item" (click)="removeFriend()"><i
+                                class="material-icons">delete</i>Delete Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-confirmation #confirmDialog></app-confirmation>

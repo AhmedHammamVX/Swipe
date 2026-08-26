@@ -1,0 +1,38 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@media (max-width: 991px) {
+    .chat {
+        max-height: calc(100vh - 70px);
+    }
+}
+
+.chat .app-chat {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat.noSelect
+{
+    justify-content: center;
+}
+
+.chat.noSelect > div
+{
+    text-align: center;
+}
+
+.chat.noSelect > div p
+{
+    font-size: 18px;
+    font-weight: normal;
+    margin: 20px;
+}
+
+.chat.noSelect > div img
+{
+    width: 180px;
+}

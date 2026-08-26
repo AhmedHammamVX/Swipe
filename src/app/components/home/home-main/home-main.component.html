@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="tab-content" id="nav-tabContent">
+        <!-- Start of Babble -->
+        <div class="babble tab-pane fade active show" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
+            <!-- Start of Chat -->
+            @if((selectedFriend || selectedFriendRequest) && !call()){
+            <div class="chat" id="chat1">
+                <app-top (call)="startCall($event)"></app-top>
+                <app-chat class="app-chat" [sentMessage]="sentMessage()"></app-chat>
+                <app-typing (sentMessage)="onMessageFromTypingC($event)"></app-typing>
+            </div>
+            }@else if (call()) {
+                <app-call></app-call>
+            }
+            @else {
+            <div class="chat noSelect">
+                <div>
+                    <img src="assets/images/simple.gif" />
+                    <p>Select a chat to start messaing.</p>
+                </div>
+            </div>
+            }
+            <!-- End of Chat -->
+        </div>
+        <!-- End of Babble -->
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.container .progress
+{
+    height: auto;
+}
+
+.container .progress .progress-bar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: all 1s ease;
+}
+
+.container .cancel
+{
+    background-color: #d11a2a !important;
+}
+
+.container .cancel i
+{
+    font-size: 24px;
+}
+
+.image img
+{
+    max-width: 80px;
+}

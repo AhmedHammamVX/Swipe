@@ -1,0 +1,33 @@
+<!-- Start of Notifications -->
+<div id="notifications" class="tab-pane fade show">
+    <div class="search">
+        <form class="form-inline position-relative">
+            <input type="search" class="form-control" id="notice" placeholder="Filter notifications...">
+            <button type="button" class="btn btn-link loop"><i
+                    class="material-icons filter-list">filter_list</i></button>
+        </form>
+    </div>
+    <div class="list-group sort">
+        <button class="btn filterNotificationsBtn active show" data-toggle="list" data-filter="all">All</button>
+        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="latest">Latest</button>
+        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="oldest">Oldest</button>
+    </div>
+    <div class="notifications">
+        <h1>Notifications</h1>
+        <div class="list-group" id="alerts" role="tablist">
+            @for(request of myRequests(); track request._id){
+            <a class="filterNotifications all latest notification" data-toggle="list" data-status="request" (click)="selectRequest(request)">
+                <img class="avatar-md" [src]="request.profilePic" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                <div class="status">
+                    <i class="material-icons online">fiber_manual_record</i>
+                </div>
+                <div class="data">
+                    <p>{{request.fullName}} would like to add you as a friend.</p>
+                    <span>Oct 17, 2018</span><!-- {{request.date | date:'short'}} -->
+                </div>
+            </a>
+            }
+        </div>
+    </div>
+</div>
+<!-- End of Notifications -->

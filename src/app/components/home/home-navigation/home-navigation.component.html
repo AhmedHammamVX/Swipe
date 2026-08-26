@@ -1,0 +1,27 @@
+<!-- Start of Navigation -->
+<div class="navigation">
+    <div class="container">
+        <div class="inside">
+            <div class="nav nav-tab menu">
+                <button class="btn"><img class="avatar-xl"
+                        [src]="currentUser?.profilePic || 'assets/images/def_user_pic.gif'" alt="avatar"></button>
+
+                <a routerLink="/home/contacts"><i class="material-icons"
+                        routerLinkActive="active">account_circle</i></a>
+
+                <a routerLink="/home/chat"><i class="material-icons"
+                        routerLinkActive="active">chat_bubble_outline</i></a>
+
+                <a routerLink="/home/notifications"><i class="material-icons"
+                        routerLinkActive="active">notifications_none</i></a>
+
+                <button class="btn mode"><i class="material-icons">brightness_2</i></button>
+
+                <a routerLink="/home/settings"><i routerLinkActive="active" class="material-icons">settings</i></a>
+
+                <button class="btn power" (click)="exit()"><i class="material-icons">power_settings_new</i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Navigation -->

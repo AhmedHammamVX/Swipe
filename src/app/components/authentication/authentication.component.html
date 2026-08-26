@@ -1,0 +1,50 @@
+<main class="start">
+    <div class="E-layout">
+        <!-- Start of Sign In -->
+        <div class="main order-md-1" [class.main-right]="main_pos == 'right'">
+            <div class="start">
+                <div class="container">
+                    <div class="col-md-12">
+
+                        <app-login [class.hideT]="main_pos == 'left'" class="content"
+                            (openSingupPage)="changeMainPosition('right')"></app-login>
+
+                        <app-sign-up [class.hideT]="main_pos == 'right'" class="content"
+                            (openLoginPage)="changeMainPosition('left')"></app-sign-up>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Sign In -->
+        <div class="aside_container">
+            <!-- Start of Sidebar -->
+            <div class="aside order-md-2">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="preference">
+                            <h2>Hello, Friend!</h2>
+                            <p>Enter your personal details and start your journey with Swipe today.</p>
+                            <a class="btn button" (click)="changeMainPosition('right')">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Start of Sidebar -->
+            <div class="aside order-md-1">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="preference">
+                            <h2>Welcome Back!</h2>
+                            <p>To keep connected with your friends please login with your personal info.</p>
+                            <a class="btn button" (click)="changeMainPosition('left')">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Sidebar -->
+        </div>
+    </div> <!-- Layout -->
+</main>

@@ -1,0 +1,42 @@
+<div class="container">
+    @if(base64Image()){
+    <div class="image">
+        <img [src]="base64Image()" alt="">
+    </div>
+    }
+    <div class="col-md-12">
+        <div class="bottom">
+            <form [formGroup]="Form" class="position-relative w-100 progress" role="progressbar"
+                aria-label="Animated striped example" (ngSubmit)="sendMessage()">
+                <textarea class="form-control message-input" formControlName="message"
+                    placeholder="Start typing for reply..." rows="1"></textarea>
+                <button type="button" class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
+                <button type="submit" class="btn send" [disabled]="isSending()">
+                    @if(isSending()){
+                        <i class="material-icons">access_time</i>
+                    }@else {
+                        <i class="material-icons">send</i>
+                    }
+                </button>
+                <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" [style.width.%]="Percentage"></div> -->
+            </form>
+
+            @if(base64Image())
+            {
+            <label class="btn attach cancel d-sm-block d-none" (click)="cancelImgSelection()">
+                <i class="material-icons">delete_forever</i>
+            </label>
+            }@else {
+            <label class="btn attach d-sm-block d-none">
+                <input type="file" (change)="onFileSelected($event)">
+                <i class="material-icons">attach_file</i>
+            </label>
+            }
+
+            <!-- <button class=" cancel btn attach d-sm-block d-none"><i class='bx bxs-trash-alt'></i></button> -->
+        </div>
+        <!-- <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+        </div> -->
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.links {
+    cursor: pointer;
+}
+
+button[type='submit']
+{
+    border: 1px solid;
+}
+
+.invalid_message
+{
+    margin: 0.50rem !important;
+    font-size: .875em !important;
+    color: #dc3545;
+}

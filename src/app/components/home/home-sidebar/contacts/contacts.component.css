@@ -1,0 +1,27 @@
+.no_match p span {
+    color: #dc3545;
+}
+
+.contact {
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid #2196f3;
+}
+
+.active .material-icons.person {
+    color: #2196f3;
+}
+
+.person-add {
+    transition: all 0.3s;
+}
+
+.person-add:hover {
+    color: #2196f3;
+}
+
+.person-add:active {
+    color: #2081d1;
+}

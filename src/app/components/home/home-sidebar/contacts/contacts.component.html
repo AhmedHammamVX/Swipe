@@ -1,0 +1,61 @@
+<!-- Start of Contacts -->
+<div class="tab-pane fade show" id="members">
+    <div class="search">
+        <form class="form-inline position-relative">
+            <input type="search" class="form-control" id="people" placeholder="Search for people..." #searchField
+                (input)="searchForNewFriend(searchField.value)"><!-- (keyup)="searchForNewUser()" -->
+            <!-- [(ngModel)]="searchF" [ngModelOptions]="{standalone: true}" -->
+            <button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
+        </form>
+    </div>
+    <!-- <div class="contacts" *ngIf="SearchResultsU.length">
+        <h1>Recent</h1>
+        <div class="list-group" id="contacts" role="tablist">
+            <div class="filterMembers all online contact" data-toggle="list" *ngFor="let friend of SearchResultsU">
+                <img class="avatar-md" [src]="friend.imgUrl"
+                    data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                <div class="status">
+                    <i class="material-icons online">fiber_manual_record</i>
+                </div>
+                <div class="data">
+                    <h5>{{friend.fullName}}</h5>
+                    <p>Sofia, Bulgaria</p>
+                </div>
+                <div class="person-add">
+                    <i class='bx' [ngClass]=" friendReq ? 'bxs-user' : 'bxs-user-plus'" (click)="addNewFriend(friend.uId)"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="contacts">
+        <h1>Contacts</h1>
+        <div class="list-group" id="contacts" role="tablist">
+            @for(friend of friendsList(); track friend._id){
+            <div href="#" class="filterMembers all online contact" data-toggle="list" (click)="checkFriend(friend) && selectFriend(friend)"
+                [class.active]="selectedFriend?._id === friend._id">
+                <img class="avatar-md" [src]="friend?.profilePic || 'assets/images/blank-pic.jpg'" data-toggle="tooltip"
+                    data-placement="top" title="Janette" alt="avatar">
+                <div class="status">
+                    <i class="material-icons"
+                        [class.online]="this.onlineUsers.includes(friend._id)">fiber_manual_record</i>
+                </div>
+                <div class="data">
+                    <h5>{{friend.fullName}}</h5>
+                    <p>Sofia, Bulgaria</p>
+                </div>
+                <div>
+                    @if(checkFriend(friend)){
+                        <i class="material-icons user person">person</i>
+                    }@else {
+                        <i class="material-icons person-add" (click)="sendFRequest(friend); $event.stopPropagation();">person_add</i>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <!-- <div class="no_match" *ngIf="!SearchResultsU.length && !friendsList.length && searchField.value">
+        <p class="text-center">No Matches Found<span>!</span></p>
+    </div> -->
+</div>
+<!-- End of Contacts -->

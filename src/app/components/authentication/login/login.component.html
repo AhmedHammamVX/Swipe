@@ -1,0 +1,34 @@
+<!-- ************************login************************ -->
+
+<h1>Sign in to Swipe</h1>
+<div class="third-party">
+    <button class="btn item bg-blue">
+        <i class="material-icons">pages</i>
+    </button>
+    <button class="btn item bg-teal">
+        <i class="material-icons">party_mode</i>
+    </button>
+    <button class="btn item bg-purple">
+        <i class="material-icons">whatshot</i>
+    </button>
+</div>
+<p>or use your email account:</p>
+<form [formGroup]="Form" (ngSubmit)="login()">
+    <div class="form-group">
+        <input type="email" formControlName="email" id="inputEmailIn" class="form-control" placeholder="Email Address"
+            required>
+        <span><i class="material-icons">mail_outline</i></span>
+    </div>
+    <div class="form-group">
+        <input type="password" formControlName="password" id="inputPasswordIn" class="form-control"
+            placeholder="Password" required>
+        <span><i class="material-icons">lock_outline</i></span>
+    </div>
+    <!-- @if(Form.invalid){
+            <p class="invalid_message" >The fields are required!</p>
+        } -->
+    <button type="submit" class="btn button">Sign In</button>
+    <div class="callout">
+        <span>Don't have account? <a class="links" (click)="changeMainPosition()">Create Account</a></span>
+    </div>
+</form>

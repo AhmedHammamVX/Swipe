@@ -19,9 +19,7 @@ Watch a walkthrough of Swipe:
 
 [▶ Watch the project video](https://www.linkedin.com/feed/update/urn:li:activity:7498064726506258432/)
 
-<!--
-[![Watch the demo](docs/demo-thumbnail.png)](VIDEO_URL)
--->
+[![Watch the demo](docs/thumbnail.png)](https://www.linkedin.com/feed/update/urn:li:activity:7498064726506258432/)
 
 <!--
   Option B — Host the file in this repo
